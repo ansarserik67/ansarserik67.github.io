@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RESTRICTED — Bucky &amp; Aknur Dossier | Wakandan / S.H.I.E.L.D. Archive</title>
+<meta name="description" content="Classified Wakandan / S.H.I.E.L.D. archive: James Buchanan 'Bucky' Barnes and Serik Aknur — across timelines, Hydra and universes, she is his only anchor.">
+<meta name="theme-color" content="#05080f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ AMBIENT LAYERS ============ -->
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="grid-layer" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+
+<!-- ============ TOP BANNER / CLASSIFIED HEADER ============ -->
+<header class="topbar" id="top">
+  <div class="marvel-logo" aria-label="Marvel">
+    <span>MARVEL</span>
+  </div>
+
+  <div class="classified">
+    <div class="classified-row">
+      <span class="rec"><i aria-hidden="true"></i>REC · ARCHIVE FEED 07</span>
+      <span class="clearance">CLEARANCE&nbsp;:&nbsp;<b>OMEGA — WAKANDA / S.H.I.E.L.D.</b></span>
+    </div>
+    <h1 class="classified-title glitch" data-text="RESTRICTED ACCESS: BUCKY &amp; AKNUR DOSSIER" aria-hidden="true">RESTRICTED ACCESS: BUCKY &amp; AKNUR DOSSIER</h1>
+    <p class="sr-only">Restricted access: Bucky and Aknur dossier — classified Wakandan and S.H.I.E.L.D. archive.</p>
+    <div class="classified-row sub">
+      <span>FILE&nbsp;NO&nbsp;<b>WS-107-AKNUR</b></span>
+      <span class="dot" aria-hidden="true">•</span>
+      <span>STATUS&nbsp;<b class="live">ACTIVE PROTECTION DETAIL</b></span>
+      <span class="dot" aria-hidden="true">•</span>
+      <span>LOC&nbsp;<b>WAKANDA → BROOKLYN → ANYWHERE SHE IS</b></span>
+    </div>
+  </div>
+
+  <div class="clock">
+    <span class="clock-label">LOCAL TIME</span>
+    <b id="clock">--:--:--</b>
+    <span class="clock-label" id="clockDate">SYNCING ARCHIVE…</span>
+  </div>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">★</span>
+    <span class="brand-text">DOSSIER<small>BUCKY &amp; AKNUR</small></span>
+  </a>
+  <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <div class="links" id="links">
+    <a href="#hero" class="active">Overview</a>
+    <a href="#bucky">Barnes</a>
+    <a href="#aknur">Aknur</a>
+    <a href="#heartmeter">Heart Meter</a>
+    <a href="#memory">Memory Archive</a>
+    <a href="#mission">Mission</a>
+    <a href="#dossier">Dossier</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-hud" aria-hidden="true">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+    <span class="crosshair"></span>
+  </div>
+
+  <p class="kicker reveal"><span class="pulse-dot" aria-hidden="true"></span>CLASSIFIED ARCHIVE · CROSS-TIMELINE RECORD · DO NOT DISTRIBUTE</p>
+
+  <h2 class="hero-title reveal">
+    <span class="line">JAMES BUCKY BARNES</span>
+    <span class="amp">&amp;</span>
+    <span class="line accent">SERIK AKNUR</span>
+  </h2>
+
+  <p class="hero-sub reveal">
+    Across Timelines, Hydra, and Universes — <em>She Is His Only Anchor.</em>
+  </p>
+
+  <div class="hero-stats reveal">
+    <div class="stat"><b data-count="107" data-suffix="+">0</b><span>Years of War</span></div>
+    <div class="stat"><b data-count="1" data-suffix="">0</b><span>Anchor</span></div>
+    <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Loyalty · Aknur</span></div>
+    <div class="stat"><b data-count="0" data-suffix="">0</b><span>Memories Of Her Erased</span></div>
+  </div>
+
+  <!-- DUAL SHOWCASE -->
+  <div class="showcase">
+
+    <!-- BUCKY FRAME -->
+    <article class="frame frame-bucky reveal" aria-labelledby="buckyFrameLabel">
+      <div class="frame-inner">
+        <div class="frame-hud" aria-hidden="true">
+          <span class="hud-tag">SUBJECT 01</span>
+          <span class="hud-tag right" id="buckyScan">SCANNING…</span>
+        </div>
+
+        <div class="photo-shell photo-bucky" data-scan-target>
+          <img src="assets/bucky-barnes.jpg" alt="James Buchanan “Bucky” Barnes — the Winter Soldier, vibranium arm and red star on the shoulder">
+          <div class="photo-tint" aria-hidden="true"></div>
+          <div class="shield-scan" aria-hidden="true">
+            <span class="scanbeam"></span>
+            <span class="reticle"></span>
+            <span class="tick t1"></span><span class="tick t2"></span>
+            <span class="tick t3"></span><span class="tick t4"></span>
+            <span class="bio-tag bt1">VIBRANIUM ARM · MK II</span>
+            <span class="bio-tag bt2">TRIGGER WORDS · PURGED</span>
+            <span class="bio-tag bt3">ANCHOR LOCK · AKNUR</span>
+          </div>
+        </div>
+
+        <div class="frame-meta">
+          <h3 id="buckyFrameLabel">JAMES B. BARNES</h3>
+          <p><span>CODE NAME</span> WINTER SOLDIER · WHITE WOLF</p>
+          <p><span>BORN</span> 10 MAR 1917 · BROOKLYN, NY</p>
+          <p><span>THREAT</span> <b class="warn">NEUTRAL — ANCHOR LOCKED</b></p>
+          <p><span>BOND</span> <b class="ok">AKNUR · PERMANENT</b></p>
+        </div>
+
+        <div class="scan-line" aria-hidden="true"></div>
+      </div>
+    </article>
+
+    <div class="showcase-link" aria-hidden="true">
+      <span class="link-pulse"></span>
+      <b>SYNCHRONISED</b>
+      <span class="link-sub">SOUL SIGNATURE MATCH</span>
+    </div>
+
+    <!-- AKNUR FRAME -->
+    <article class="frame frame-aknur is-scanned reveal" data-scan-target aria-labelledby="aknurFrameLabel">
+      <div class="frame-inner">
+        <div class="frame-hud" aria-hidden="true">
+          <span class="hud-tag">SUBJECT 02</span>
+          <span class="hud-tag right" id="aknurScan">SCAN 100%</span>
+        </div>
+
+        <div class="photo-shell">
+          <img src="assets/serik-aknur.jpg" alt="Serik Aknur — the love of Bucky Barnes' life, photographed at sunset on the water">
+          <div class="photo-tint" aria-hidden="true"></div>
+          <div class="shield-scan" aria-hidden="true">
+            <span class="scanbeam"></span>
+            <span class="reticle"></span>
+            <span class="tick t1"></span><span class="tick t2"></span>
+            <span class="tick t3"></span><span class="tick t4"></span>
+            <span class="bio-tag bt1">BIOMETRIC MATCH 100%</span>
+            <span class="bio-tag bt2">HEART RATE · CALM</span>
+            <span class="bio-tag bt3">THREAT LEVEL · NONE</span>
+          </div>
+        </div>
+
+        <div class="frame-meta">
+          <h3 id="aknurFrameLabel">SERIK AKNUR</h3>
+          <p><span>BORN</span> 09 NOV 2005 · URALSK, KAZAKHSTAN</p>
+          <p><span>CLEARANCE</span> <b class="ok">OMEGA — ABOVE THE MISSION</b></p>
+          <p><span>ROLE</span> THE ANCHOR · HOME · PEACE</p>
+          <p><span>SAFETY</span> <b class="ok">GUARANTEED · BY VIBRANIUM OATH</b></p>
+        </div>
+
+        <div class="scan-line" aria-hidden="true"></div>
+      </div>
+    </article>
+  </div>
+
+  <a class="scroll-cue" href="#bucky" aria-label="Scroll to Barnes profile">
+    <span>ACCESS PROFILE</span>
+    <i aria-hidden="true">▼</i>
+  </a>
+</section>
+
+<!-- ============ BUCKY PROFILE ============ -->
+<section class="section" id="bucky">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="eyebrow">FILE 01 · SUBJECT RECORD</span>
+      <h2>BARNES, JAMES BUCHANAN <small>“BUCKY”</small></h2>
+      <p class="section-sub">
+        A man the century tried to erase four times. The one page Hydra could never tear out: <b class="accent">her</b>.
+      </p>
+    </header>
+
+    <div class="grid grid-profile">
+      <div class="glass panel reveal">
+        <h3 class="panel-title">PERSONAL PROFILE</h3>
+        <ul class="datalist">
+          <li><span>NAME</span><b>James Buchanan “Bucky” Barnes</b></li>
+          <li><span>AGE</span><b>107+ Years (Chronological) / Forever Dedicated to Aknur</b></li>
+          <li><span>STATUS</span><b class="ok">White Wolf / Protected by Serik Aknur</b></li>
+          <li><span>BORN</span><b>March 10, 1917 — Brooklyn, New York</b></li>
+          <li><span>AFFILIATION</span><b>Howling Commandos · S.H.I.E.L.D. (reinstated) · Wakanda</b></li>
+          <li><span>ENHANCEMENT</span><b>Vibranium cybernetic left arm — Wakandan upgrade</b></li>
+          <li><span>TRIGGER WORDS</span><b class="line-through">PURGED &amp; MELTED FROM THE ARCHIVE</b></li>
+          <li><span>PRIMARY ANCHOR</span><b class="accent">SERIK AKNUR — IRREPLACEABLE</b></li>
+        </ul>
+      </div>
+
+      <div class="glass panel panel-note reveal">
+        <span class="note-flag">SPECIAL NOTE · HANDLER MARGIN</span>
+        <blockquote class="special-note">
+          “Aknur is the only memory Hydra could never erase.”
+        </blockquote>
+        <p class="note-body">
+          Every wipe took a name, a face, a city. The chair took seventy years of Brooklyn.
+          It never once took <b class="accent">her</b>. Not the laugh, not the way she says his
+          full name when she is mad, not the way the room gets quiet when she walks in.
+          He came out of the cold remembering exactly one thing — and it was Serik.
+        </p>
+        <div class="meta-strip">
+          <span>WIPE ATTEMPTS · 25</span><span>MEMORIES OF AKNUR LOST · 0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-triple">
+      <div class="glass mini reveal">
+        <span class="mini-id">REC · 1943</span>
+        <h4>Before The War</h4>
+        <p>Brooklyn rooftops, one shared coat, and a promise that he would always come back to her. He kept it — it just took him 70 years.</p>
+      </div>
+      <div class="glass mini reveal">
+        <span class="mini-id">REC · 2014</span>
+        <h4>The Man On The Bridge</h4>
+        <p>“Who the hell is Bucky?” The world knew the question. Aknur already knew the answer, and she never stopped saying his name.</p>
+      </div>
+      <div class="glass mini reveal">
+        <span class="mini-id">REC · NOW</span>
+        <h4>White Wolf, Off The Leash</h4>
+        <p>Unfrozen, unarmed, unbothered. Tracked by every intelligence agency on Earth — and one girl with a sunset and a boat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AKNUR / LOVE INTEREST ============ -->
+<section class="section section-aknur" id="aknur">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="eyebrow">FILE 02 · PRIORITY ASSET</span>
+      <h2 class="huge">THE LOVE OF HIS LIFE: <span class="accent">SERIK AKNUR</span></h2>
+      <p class="section-sub">Cross-referenced in every timeline. Confirmed constant in all of them.</p>
+    </header>
+
+    <div class="grid grid-love">
+      <div class="glass panel bio-card reveal">
+        <span class="panel-tag">BIO CARD</span>
+        <p class="bio-text">
+          “The ultimate center of Bucky’s universe. While the world saw the Winter Soldier as a
+          weapon, Aknur saw his true soul.”
+        </p>
+        <p class="bio-body">
+          She is the reason the arm is not a weapon and the reason the man is not a mission.
+          She is the safehouse with the light left on, the calm between the flashbacks,
+          the one person who talks to Bucky and not to the file.
+        </p>
+
+        <ul class="datalist tight">
+          <li><span>BORN</span><b>9 November 2005 — Uralsk, Kazakhstan</b></li>
+          <li><span>DESIGNATION</span><b class="accent">ANCHOR · HOME · PEACE</b></li>
+          <li><span>EFFECT ON SUBJECT</span><b class="ok">Violence · Unnecessary. Heart rate · Stable.</b></li>
+          <li><span>STRATEGIC VALUE</span><b>Single most protected individual in the archive</b></li>
+        </ul>
+
+        <div class="meta-strip">
+          <span>TIMELINES CHECKED · ∞</span><span>TIMELINES WITHOUT HER · 0</span>
+        </div>
+      </div>
+
+      <div class="glass scanframe reveal">
+        <div class="scanframe-head">
+          <span class="hud-tag">S.H.I.E.L.D. SCAN FRAME</span>
+          <span class="hud-tag right ok">MATCH 100%</span>
+        </div>
+        <div class="photo-shell tall" data-scan-target>
+          <img src="assets/serik-aknur.jpg" alt="Retinal and biometric scan frame dedicated to Serik Aknur">
+          <div class="photo-tint" aria-hidden="true"></div>
+          <div class="shield-scan" aria-hidden="true">
+            <span class="scanbeam"></span>
+            <span class="corner-2 tl"></span><span class="corner-2 tr"></span>
+            <span class="corner-2 bl"></span><span class="corner-2 br"></span>
+            <span class="bio-tag bt1">IDENTITY CONFIRMED</span>
+            <span class="bio-tag bt3">SMILE · LETHAL (FRIENDLY FIRE)</span>
+          </div>
+        </div>
+        <div class="scanframe-foot">
+          <span>FRAME · AKNUR / GOLDEN HOUR</span>
+          <span>VAULT NODE · WAKANDA-09</span>
+        </div>
+        <button class="btn-ghost" type="button" data-rescan>▷ RESCAN SUBJECT</button>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE QUOTE -->
+    <div class="quote-block glass reveal" id="quoteBlock">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <p class="quote-text" id="quoteText">You are my peace after a hundred years of war.</p>
+      <p class="quote-cite" id="quoteCite">— Bucky Barnes</p>
+      <div class="quote-dots" id="quoteDots" role="tablist" aria-label="Select a recovered quote"></div>
+      <button class="btn-ghost small" type="button" id="quoteNext">↻ NEXT RECOVERED QUOTE</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIBRANIUM HEART METER ============ -->
+<section class="section" id="heartmeter">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="eyebrow">FILE 03 · BIOMETRIC MODULE</span>
+      <h2>VIBRANIUM HEART METER</h2>
+      <p class="section-sub">Affection &amp; loyalty calibration. Target selection determines the reading. There has only ever been one correct answer.</p>
+    </header>
+
+    <div class="grid grid-meter">
+      <div class="glass meter-panel reveal">
+        <div class="meter-head">
+          <span class="hud-tag">LOYALTY GAUGE · MODEL WS-107</span>
+          <span class="hud-tag right live" id="meterState">STANDBY</span>
+        </div>
+
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 300 170" role="img" aria-labelledby="gaugeLabel">
+            <title id="gaugeLabel">Vibranium heart meter reading</title>
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#6b0000"/>
+                <stop offset="45%" stop-color="#E60505"/>
+                <stop offset="100%" stop-color="#ff5a5a"/>
+              </linearGradient>
+              <filter id="gaugeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="5" result="gb"/>
+                <feMerge><feMergeNode in="gb"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path class="gauge-track" d="M 24 146 A 126 126 0 0 1 276 146"/>
+            <path class="gauge-fill" id="gaugeFill" d="M 24 146 A 126 126 0 0 1 276 146" filter="url(#gaugeGlow)"/>
+            <g class="gauge-ticks" aria-hidden="true">
+              <line x1="24" y1="146" x2="24" y2="132"/><line x1="54" y1="86" x2="66" y2="94"/>
+              <line x1="150" y1="60" x2="150" y2="74"/><line x1="246" y1="86" x2="234" y2="94"/>
+              <line x1="276" y1="146" x2="276" y2="132"/>
+            </g>
+          </svg>
+          <div class="gauge-center">
+            <span class="heart" aria-hidden="true">❤</span>
+            <b id="meterValue">0<i>%</i></b>
+            <span class="meter-target" id="meterTarget">TARGET: —</span>
+          </div>
+        </div>
+
+        <div class="target-picker" role="group" aria-label="Select affection target">
+          <button class="target active" type="button" data-target="AKNUR" data-value="100">
+            <b>SERIK AKNUR</b><small>the only variable</small>
+          </button>
+          <button class="target" type="button" data-target="THE WORLD" data-value="12">
+            <b>THE WORLD</b><small>professional courtesy</small>
+          </button>
+          <button class="target" type="button" data-target="HYDRA" data-value="0">
+            <b>HYDRA</b><small>reading unavailable</small>
+          </button>
+        </div>
+
+        <button class="btn-ghost" type="button" id="meterScan">▷ RUN CALIBRATION SCAN</button>
+      </div>
+
+      <div class="glass heart-log reveal">
+        <span class="panel-tag">CALIBRATION LOG</span>
+        <ul class="log-list" id="heartLog">
+          <li><b>SESSION 001</b><span>Baseline established at 100% for AKNUR · stable since 1943.</span></li>
+          <li><b>ANOMALY</b><span>Reading spikes to 100% whenever she laughs. Not fixable. Not trying.</span></li>
+          <li><b>FAILSAFE</b><span>If the value ever drops, the arm powers down before the brain does.</span></li>
+        </ul>
+        <div class="vibranium-bar" aria-hidden="true">
+          <i style="--w:100%"></i><i style="--w:82%"></i><i style="--w:64%"></i><i style="--w:41%"></i><i style="--w:23%"></i>
+        </div>
+        <p class="fine">Vibranium plating resonance: <b class="ok">OPTIMAL</b> · Bond integrity: <b class="ok">UNBREAKABLE</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMORY RECOVERY ARCHIVE ============ -->
+<section class="section" id="memory">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="eyebrow">FILE 04 · RECOVERED WAKANDAN VIDEO LOGS</span>
+      <h2>MEMORY RECOVERY ARCHIVE</h2>
+      <p class="section-sub">Fragments pulled from the cryo-chair wreckage, the Wakandan river hut, and one very stubborn heart. Tap a log to play it back.</p>
+    </header>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-spine" aria-hidden="true"><i id="spineFill"></i></div>
+
+      <article class="tlog glass reveal" data-log="LOG-01">
+        <div class="tlog-head">
+          <span class="tlog-year">1943</span>
+          <span class="tlog-id">LOG-01 · BROOKLYN</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>“Wait For Me, Aknur.”</h3>
+        <p class="tlog-line">Dock 4, Brooklyn Navy Yard. He ships out tomorrow and she is fixing his collar like it is the only thing holding the world together.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="SERIK: Come back, Bucky. Not as a soldier. As you.||BUCKY: I'll come back. Different maybe. But I'll come back to you.||— LOG ENDS. DEPARTURE: 06:00 —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+
+      <article class="tlog glass reveal" data-log="LOG-02">
+        <div class="tlog-head">
+          <span class="tlog-year">1945</span>
+          <span class="tlog-id">LOG-02 · THE ALPS</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>The Fall — And The One Name He Kept</h3>
+        <p class="tlog-line">The train, the snow, the drop. Between the fall and the chair, exactly one word survives the ice.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="AUDIO FRAGMENT · DISTRESSED: —Ak... nur... —||ANALYSIS: SUBJECT RETAINS SINGLE ANCHOR UNDER EXTREME TRAUMA.||HYDRA NOTE: 'UNEXPLAINED RESIDUAL. SCHEDULE WIPE.' —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+
+      <article class="tlog glass reveal" data-log="LOG-03">
+        <div class="tlog-head">
+          <span class="tlog-year">2014</span>
+          <span class="tlog-id">LOG-03 · WASHINGTON D.C.</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>The Man On The Bridge</h3>
+        <p class="tlog-line">Rooftop. Reticle. A heartbeat that will not steady — because the person in the scope, and the person behind him, both refuse to let him disappear.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="BUCKY: Who the hell is Bucky?||SERIK: Don't do that. You know exactly who you are.||AKNUR FILE: 'HE REMEMBERED MY VOICE BEFORE HE REMEMBERED HIS NAME.' —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+
+      <article class="tlog glass reveal" data-log="LOG-04">
+        <div class="tlog-head">
+          <span class="tlog-year">2016</span>
+          <span class="tlog-id">LOG-04 · BUCHAREST</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>The Small Apartment With The Notebook</h3>
+        <p class="tlog-line">One room, no lock on the door, plums on the counter and her name written on the first page of the book — underlined twice.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="NOTEBOOK ENTRY 14: Buy plums. Fix window. Call Aknur — SHE IS THE FIRST LINE ON EVERY PAGE.||CAMERA 3: SUBJECT SMILES AT 04:12. NO THREAT DETECTED. —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+
+      <article class="tlog glass reveal" data-log="LOG-05">
+        <div class="tlog-head">
+          <span class="tlog-year">2018</span>
+          <span class="tlog-id">LOG-05 · WAKANDA</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>The Hut By The River — White Wolf Wakes Free</h3>
+        <p class="tlog-line">The trigger words are gone. He walks out of the ice and into the sun, and the first person standing there is her.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="SHURI: No more words. You are free, Barnes.||BUCKY: Then I have somewhere to be.||RIVER HUT · SUNSET: TWO CHAIRS. HER PICTURE ON THE SHELF FACING THE DOOR. —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+
+      <article class="tlog glass reveal" data-log="LOG-06">
+        <div class="tlog-head">
+          <span class="tlog-year">∞</span>
+          <span class="tlog-id">LOG-06 · EVERY TIMELINE</span>
+          <span class="tlog-play" aria-hidden="true">▶</span>
+        </div>
+        <h3>The Vow (Repeats In Every Timeline)</h3>
+        <p class="tlog-line">Every branch, every universe, every version of him finds the same face. The archive stopped being surprised decades ago.</p>
+        <div class="tlog-body">
+          <p class="transcript" data-typing="TIMELINE 1: Found her.||TIMELINE 617: Found her.||TIMELINE 838: Found her.||ALL BRANCHES: 「AKNUR」 — CONSTANT. —||BUCKY: Wherever you are, that's the mission. —"></p>
+          <div class="scrubber" aria-hidden="true"><i></i></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION PROTOCOL ============ -->
+<section class="section" id="mission">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="eyebrow">FILE 05 · ACTIVE HUD DASHBOARD</span>
+      <h2>MISSION PROTOCOL: <span class="accent">PROTECT AKNUR</span></h2>
+      <p class="section-sub">All other assignments deferred. Permanently.</p>
+    </header>
+
+    <div class="grid grid-mission">
+      <div class="glass hud-panel reveal">
+        <div class="hud-top">
+          <span class="hud-tag">PRIORITY DIRECTIVE</span>
+          <span class="hud-tag right danger">STATUS · ACTIVE</span>
+        </div>
+
+        <p class="mission-order">“Protect Serik Aknur at all costs.”</p>
+
+        <div class="hud-meters">
+          <div class="hmeter">
+            <span>PRIORITY</span>
+            <div class="hmeter-bar"><i style="--w:100%"></i></div>
+            <b>ABSOLUTE</b>
+          </div>
+          <div class="hmeter">
+            <span>VIGILANCE</span>
+            <div class="hmeter-bar red"><i style="--w:98%"></i></div>
+            <b>98%</b>
+          </div>
+          <div class="hmeter">
+            <span>EXTRACTION READINESS</span>
+            <div class="hmeter-bar"><i style="--w:94%"></i></div>
+            <b>94%</b>
+          </div>
+        </div>
+
+        <ul class="objectives" id="objectives">
+          <li data-obj>Maintain proximity to Serik Aknur<span class="obj-state">SECURED</span></li>
+          <li data-obj>Neural trigger words — permanently purged<span class="obj-state">COMPLETE</span></li>
+          <li data-obj>Perimeter guard · 24/7 · no exceptions<span class="obj-state">ONLINE</span></li>
+          <li data-obj>Any threat toward Aknur — terminate protocol authorized<span class="obj-state">ARMED</span></li>
+          <li data-obj>Make her laugh at least once per day<span class="obj-state">ALWAYS</span></li>
+        </ul>
+
+        <button class="btn-primary" type="button" id="engage">
+          <span class="btn-label">ENGAGE PROTOCOL</span>
+          <span class="btn-shimmer" aria-hidden="true"></span>
+        </button>
+        <p class="fine" id="engageMsg">Awaiting operator authorisation…</p>
+      </div>
+
+      <div class="glass telemetry reveal">
+        <span class="panel-tag">LIVE TELEMETRY</span>
+        <div class="tele">
+          <div class="tele-row"><span>COMMS LINK</span><b class="ok">AKNUR-01 · SECURE</b></div>
+          <div class="tele-row"><span>TARGET HEART RATE</span><b id="teleHr">— BPM · CALM</b></div>
+          <div class="tele-row"><span>DISTANCE TO TARGET</span><b id="teleDist">— M</b></div>
+          <div class="tele-row"><span>THREAT INDEX</span><b class="warn" id="teleThreat">ELEVATED NEAR HER</b></div>
+          <div class="tele-row"><span>ARM STATUS</span><b>VIBRANIUM · POWERED DOWN</b></div>
+          <div class="tele-row"><span>EXIT STRATEGY</span><b class="accent">STAY</b></div>
+        </div>
+        <div class="radar" aria-hidden="true">
+          <span class="radar-ring r1"></span><span class="radar-ring r2"></span><span class="radar-ring r3"></span>
+          <span class="radar-sweep"></span>
+          <span class="radar-dot d1"></span><span class="radar-dot d2"></span><span class="radar-dot heart-dot"></span>
+        </div>
+        <p class="fine">Operator override: <b>DISABLED</b> · Handler: <b class="accent">AKNUR</b> · Mission duration: <b>FOREVER</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOSSIER / FOOTER ============ -->
+<section class="section section-dossier" id="dossier">
+  <div class="wrap dossier-wrap">
+    <header class="section-head center reveal">
+      <span class="eyebrow">FINAL ENTRY</span>
+      <h2 class="huge">THE FILE THEY COULD NEVER CLOSE</h2>
+      <p class="section-sub">
+        A super-soldier, a vibranium arm, a Wakandan archive, an infinity of timelines —
+        and one name that keeps every single one of them standing. <b class="accent">Serik Aknur.</b>
+      </p>
+    </header>
+
+    <div class="dossier-cta reveal">
+      <button class="btn-primary btn-hero" type="button" id="openDossier">
+        <span class="btn-label">ACCESS FULL DOSSIER</span>
+        <span class="btn-shimmer" aria-hidden="true"></span>
+      </button>
+      <p class="fine">Clearance OMEGA required · Access logged by the Wakandan Design Group</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-wrap">
+      <div class="footer-block">
+        <span class="marvel-logo small"><span>MARVEL</span></span>
+        <p>Classified Archive — Bucky &amp; Aknur. A fan-made tribute build. Not affiliated with Marvel Studios or S.H.I.E.L.D.</p>
+      </div>
+      <div class="footer-block">
+        <b>ARCHIVE NODES</b>
+        <span>WAKANDA-09</span><span>BROOKLYN-43</span><span>URAlsk-05</span><span>BUCHAREST-16</span><span>ALPS-45</span>
+      </div>
+      <div class="footer-block">
+        <b>STATUS</b>
+        <span class="live">DOSSIER OPEN · HAPPY ENDING IN PROGRESS</span>
+        <span>Last sync: <b id="footSync">--</b></span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<!-- ============ DOSSIER MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card glass">
+    <button class="modal-close" type="button" data-close aria-label="Close dossier">✕</button>
+    <span class="eyebrow">CLEARANCE GRANTED · OMEGA</span>
+    <h2 id="modalTitle">FULL DOSSIER · BUCKY &amp; AKNUR</h2>
+    <div class="modal-scroll">
+      <div class="modal-sec">
+        <h3>I. SUBJECT — JAMES BUCHANAN BARNES</h3>
+        <p>Born 1917, Brooklyn. Sergeant, 107th Infantry. Presumed KIA 1945. Recovered by Hydra, rebuilt as the Winter Soldier, deployed for 50+ years, freed by Steve Rogers, rehabilitated in Wakanda as the White Wolf.</p>
+        <p><b class="accent">Active threat classification: retired.</b> Only remaining active assignment is the one he gave himself.</p>
+      </div>
+      <div class="modal-sec">
+        <h3>II. SUBJECT — SERIK AKNUR</h3>
+        <p><b>Born 9 November 2005 in Uralsk, Kazakhstan.</b> Designated <b class="accent">THE ANCHOR</b>. Cross-referenced in all recorded branches of the timeline as the constant variable in Barnes' psychological stability index.</p>
+        <p>Officially: no file. Functionally: the entire reason the file has a happy ending.</p>
+      </div>
+      <div class="modal-sec">
+        <h3>III. BOND ANALYSIS</h3>
+        <p>Where the wipe took everything else, her name survived 25 memory suppression cycles. Hydra's own analysts logged it as an "unexplained residual" and quietly gave up on erasing it.</p>
+        <p>Assessment: <b class="ok">bond is not memory-dependent. It is structural.</b></p>
+      </div>
+      <div class="modal-sec">
+        <h3>IV. STANDING ORDER</h3>
+        <p class="order">Protect Serik Aknur at all costs. Everything else — the shield, the arm, the century, the war — is negotiable.</p>
+      </div>
+      <div class="modal-sec">
+        <h3>V. CLOSING NOTE</h3>
+        <p>“You are my peace after a hundred years of war.” — <b>Bucky Barnes</b></p>
+        <p class="fine">Archive closes: never. Someone has to keep the light on for him.</p>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <span class="hud-tag">DOC-END · WS-107-AKNUR</span>
+      <button class="btn-ghost small" type="button" data-close>CLOSE FILE</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
